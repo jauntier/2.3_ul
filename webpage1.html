@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .r, .r1, .r2, .r3, .r4, .r5 {
+            display:none;
+        }
+
+        dl {
+            font-family: "Arial", sans-serif; 
+            font-size: 16px; 
+            color: #333; 
+        }
+
+        dt {
+            font-weight: bold; 
+            margin-top: 10px; 
+            cursor: pointer; /* Add cursor pointer to indicate clickable */
+        }
+
+        dd {
+            margin-bottom: 15px; 
+            margin-left: 20px; 
+            color: #666; 
+        }
+
+        dl {
+            border: 1px solid #ccc; 
+            border-radius: 5px; 
+            padding: 15px; 
+        }
+
+        dt:hover {
+            color: #007bff; 
+        }
+    </style>
+</head>
+
+<body>
+    <ul>
+        <li><dl><dt class="q">A</dt><dd class="r">The first letter of the alphabet.</dd></dl></li>
+        <li><dl><dt class="q1">B</dt><dd class="r1">The second letter of the alphabet.</dd></dl></li>
+        <li><dl><dt class="q2">C</dt><dd class="r2">The third letter of the alphabet.</dd></dl></li>
+        <li><dl><dt class="q3">D</dt><dd class="r3">The fourth letter of the alphabet.</dd></dl></li>
+        <li><dl><dt class="q4">E</dt><dd class="r4">The fifth letter of the alphabet.</dd></dl></li>
+        <li><dl><dt class="q5">F</dt><dd class="r5">The sixth letter of the alphabet.</dd></dl></li>
+    </ul>
+
+    <script>
+        // Get all dt and dd elements
+        const dtElements = document.querySelectorAll("dt");
+        const ddElements = document.querySelectorAll("dd");
+
+        // Add click event listener to each dt
+        dtElements.forEach((dt, index) => {
+            dt.addEventListener("click", function () {
+                // Toggle the display property of corresponding dd element
+                ddElements[index].style.display = ddElements[index].style.display === "none" ? "block" : "none";
+            });
+        });
+    </script>
+</body>
+</html>
